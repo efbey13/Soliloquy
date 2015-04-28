@@ -9,14 +9,19 @@
   "background" : {
     "scripts" : ["background.js"]
     },
-  // the browser action is the icon that users click to activate the extension
   "browser_action" : {
     "default_title" : "Soliloquy",
     "default_icon" : "img/idea-48.png",
-    "default_popup" : "popup.html"
+    "default_popup" : "popup.html",
+    "commands" : {"_execute_browser_action":{
+        "suggested_key": {
+          "windows": "Ctrl+l",
+          "mac": "Command+l",
+          "chromeos": "Ctrl+l",
+          "linux": "Ctrl+l"}
+        }
+      }
     },
-    "options_page" : "options.html",
-  // will likely require a different set of permissions
   "permissions" : [
     "activeTab",
     "background",
@@ -25,10 +30,11 @@
     "http://*/*",
     "https://*/*"
 
+
   ]
 
 
 
 
-    
+
 }

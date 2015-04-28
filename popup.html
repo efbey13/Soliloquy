@@ -3,16 +3,26 @@
 <form name="notes" method="POST">
 <div align="center">
 Soliloquy<br><br>
-<textarea id="value-in" cols="40" rows="20" name="notes">
+<input type="text" id="value-in" cols="40" rows="20" name="notes">
 Quick! Write it down! (hit 'enter' to save)
-</textarea>
+</form>
 <br><br>
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#btn2").click(function(){
+        $("ol").append("<li>Appended item</li>");
+    });
+});
+</script>
+
+<ol id="value-out">
+</ol>
+
+<button id="btn2" type="submit">Save</button>
 <!-- <button>Save</button> -->
-</div>
-</form>
-<ul id="value-out">
-<script src="save.js"></script>
+<!-- <script src="save.js"></script> -->
 </body>
 
 
@@ -55,3 +65,9 @@ Quick! Write it down! (hit 'enter' to save)
 <!-- >>>>>>> Stashed changes -->
 
  <!-- <input placeholder="Quick! Write it down!" id="value-in"/><style>input{ resize: vertical; height: 200px;resize: horizontal; width: 180px;}</style> -->
+
+
+<!-- associate URL with notes, nested data structure
+would look like { URL1 => [note1, note2], URL2 => [note1, note2]} -->
+
+<!-- jquery append method to create html a bunch of times.  -->
